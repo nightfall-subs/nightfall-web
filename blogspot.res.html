@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html5>
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<style>
+  @font-face {
+    font-family: 'Droid Arabic Kufi';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font/DroidKufi-Regular.eot);
+    src: url(font/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'),
+        url(font/DroidKufi-Regular.woff2) format('woff2'),
+        url(font/DroidKufi-Regular.woff) format('woff'),
+        url(font/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    font-style: normal;
+    font-weight: 700;
+    src: url(font/DroidKufi-Bold.eot);
+    src: url(font/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'),
+        url(font/DroidKufi-Bold.woff2) format('woff2'),
+        url(font/DroidKufi-Bold.woff) format('woff'),
+        url(font/DroidKufi-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'ALDITH';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font/ALDITHRegular.eot);
+    src: url(font/ALDITHRegular.eot?#iefix) format('embedded-opentype'),
+        url(font/ALDITHRegular.woff2) format('woff2'),
+        url(font/ALDITHRegular.woff) format('woff'),
+        url(font/ALDITHRegular.ttf) format('truetype');
+}
+body {
+  font-family: 'Droid Arabic Kufi',serif;
+  margin: 0;
+  font-weight: 40;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  font-size: 14px;
+  padding: 0px;
+  background-image: url(https://images-ext-1.discordapp.net/external/3sfXkAMV0Ld8ImprFDmMRBUcaJnYeVIEoo5TMGySZHs/https/i.redd.it/pil42kt6glf51.jpg);
+}
+.posts{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.post{
+  width: 17%;
+  background: #f1f1f1;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px black;
+  float: left;
+}
+.post img{
+  width: 100%;
+  height: 280px;
+}
+.post h2{
+  margin: 0;
+  padding: 0 10px;
+}
+.post p{
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding: 0 10px;
+}
+@media (max-width:700px){
+  .post{
+    width: 96%;
+    margin: 60%;
+  }
+}
+
+
+header{
+  height: 90px;
+  background: #2f3640;
+}
+
+.inner-width{
+  max-width: 1000px;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.logo{
+  float: left;
+  padding: 15px 10;
+}
+
+.logo img{
+  height: 60px;
+}
+
+.copyright{
+  float: left;
+  padding: 35px 0;
+}
+.navigation-menu{
+  float: right;
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+}
+.copyright menu{
+  float: left;
+}
+
+.copyright menu a{
+  margin-left: 10px;
+  font-size: 14px;
+}
+.navigation-menu a{
+  margin-left: 10px;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  transition: .3s linear;
+}
+
+.navigation-menu a:hover{
+  background: #fff;
+  color: #2f3640;
+  transform: scale(1.1);
+}
+
+.navigation-menu i{
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.home{
+  color: #ff6b6b;
+  }
+
+.about{
+  color: #0abde3;
+}
+
+.works{
+  color: #feca57;
+}
+
+.contact{
+  color: #1dd1a1;
+}
+
+.menu-toggle-btn{
+  float: right;
+  height: 90px;
+  line-height: 90px !important;
+  color: #fff;
+  font-size: 26px;
+  display: none !important;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width:700px) {
+  .menu-toggle-btn{
+    display: block !important;
+  }
+
+  .navigation-menu{
+    position: fixed;
+    width: 100%;
+    max-width: 400px;
+    background: #172b4d;
+    top: 90px;
+    right: 0;
+    display: none;
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+
+  .navigation-menu::before{
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #172b4d;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+
+  .navigation-menu a{
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navigation-menu.active{
+    display: block;
+  }
+}
+.page-container {
+  position: relative;
+  min-height: 10vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+  color: white;
+  font-family: 'ALDITH','Droid Arabic Kufi';
+  text-align: center;
+  background: #2f3640;
+  margin-top: 10px;
+}
+.middle{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.btn{
+  background: none;
+  border: 2px solid #000;
+  font-family: "ALDITH","Droid Arabic Kufi";
+  text-transform: uppercase;
+  padding: 12px 20px;
+  min-width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+}
+.btn:hover{
+  color: #fff;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+.btn1::before{
+  transform: scaleX(0);
+}
+.btn2::before{
+  transform: scaleY(0);
+}
+.btn1:hover::before{
+  transform: scaleX(1);
+}
+.btn2:hover::before{
+  transform: scaleY(1);
+}
+.image-komi{
+	   height:280px;
+	   width:200px;
+	   padding-left:400px;
+	   padding-top:0px;
+}
+.komi-san-page{
+  position: absolute;
+  top: 35%;
+  left: 8%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.image-nightfall{
+	   height:280px;
+	   width:200px;
+	   padding-left:400px;
+	   padding-top:0px;
+}
+.nightfall-page{
+  position: absolute;
+  top: 45%;
+  left: 8%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.title-manga {
+  margin: 0;
+  padding: 0 10px;
+  font-family: sans-serif;
+  letter-spacing: -.003em;
+  font-size: 10px;
+  padding: 0px;
+  font-weight: bold;
+  color: #008080;
+}
+.manga-p{
+  margin: 0;
+  padding: 0 10px;
+  font-family: sans-serif;
+  letter-spacing: -.003em;
+  font-size: 20px;
+  padding: 0px;
+  font-weight: bold;
+}
+.story{
+  margin: 0;
+  padding: 0 10px;
+  font-family: "Droid Arabic Kufi";
+  letter-spacing: -.003em;
+  font-size: 13px;
+  padding: 0px;
+  font-weight: bold;
+}
+.team-contact{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'ALDITH';
+  font-size: 50px;
+  font-weight: bold;
+}
+.contact-text1{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'ALDITH','Droid Arabic Kufi';
+  font-size: 15px;
+  font-weight: bold;
+}
+.contact-text2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'ALDITH','Droid Arabic Kufi';
+  font-size: 15px;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <header>
+      <div class="inner-width">
+        <a href="#" class="logo"><img src="https://cdn.discordapp.com/icons/797429563365523466/3f2c33d9737ea046307abb733595bcda.png?size=1024" alt=""></a>
+        <i class="menu-toggle-btn fas fa-bars"></i>
+        <nav class="navigation-menu">
+          <a href="#"><i class="fas fa-home home"></i> الرئيسية</a>
+          <a href="#"><i class="fas fa-align-left works"></i> اعمالنا</a>
+          <a href="#"><i class="fab fa-buffer about"></i> من نحن</a>
+          <a href="#"><i class="fas fa-headset contact"></i> تواصل معنا</a>
+		  <a href="#"><i class="fa fa-newspaper-o" style="font-size:20px;color:red"></i> الروايات</a>
+        </nav>
+		<nav class="copyright-menu">
+		  <i class="copyright" style="color:white">كافة الحقوق محفوظة لصالح الفريق</i>
+		</nav>
+		
+      </div>
+    </header>
+    <script type="text/javascript">
+      $(".menu-toggle-btn").click(function(){
+        $(this).toggleClass("fa-times");
+        $(".navigation-menu").toggleClass("active");
+      });
+    </script>
+</body>
